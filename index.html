@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Festival Tropicália 2025</title>
+
+<section class="about">
+  <div style="padding: 20px; max-width: 800px; margin: 0 auto; text-align: center;">
+    <h2 style="color: #FFA500;">Sobre o Festival</h2>
+    <p style="font-size: 1.1em;">
+      O Festival Tropicália 2025 celebra a essência tropical com uma mistura de música, arte e natureza em um ambiente vibrante e acolhedor. 
+      Realizado à beira-mar, o festival reúne artistas nacionais e internacionais em shows ao pôr do sol, instalações interativas, food trucks e experiências únicas para todas as idades. 
+      Prepare-se para viver dias inesquecíveis sob o calor tropical, embalado por ritmos envolventes e boas energias!
+    </p>
+  </div>
+</section>
+
+  <style>
+
+#accessibility-btn {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  background-color: #3399FF;
+  color: white;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1000;
+  font-size: 1.2em;
+}
+
+#accessibility-panel {
+  position: fixed;
+  top: 50px;
+  left: 10px;
+  background-color: #fff;
+  border: 2px solid #3399FF;
+  padding: 10px;
+  border-radius: 10px;
+  z-index: 999;
+  display: none;
+}
+
+#accessibility-panel button {
+  display: block;
+  margin: 5px 0;
+  width: 100%;
+  padding: 8px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.high-contrast {
+  background-color: black !important;
+  color: yellow !important;
+}
+
+/* Estilo normal da seção de contato */
+.contact {
+  background: #f0f8ff;
+  padding: 30px 20px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Estilo quando o modo alto contraste está ativo */
+body.high-contrast .contact {
+  background-color: black !important;
+  color: yellow !important;
+}
+
+
+    
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #fff;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(135deg, #FFCC00, #FFA500, #00CC99, #3399FF);
+      padding: 60px 20px;
+      text-align: center;
+      color: white;
+    }
+
+    header h1 {
+      font-size: 3em;
+      margin: 0;
+    }
+
+    header p {
+      font-size: 1.4em;
+      margin-top: 10px;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 20px;
+      justify-content: center;
+    }
+
+    .gallery img {
+      width: 300px;
+      height: 200px;
+      object-fit: cover;
+      background: #eee;
+      border-radius: 8px;
+    }
+
+    .contact {
+      background: #f0f8ff;
+      padding: 30px 20px;
+    }
+
+    .contact h2 {
+      text-align: center;
+      color: #3399FF;
+    }
+
+    form {
+      max-width: 500px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input, textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1em;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px;
+      background-color: #00CC99;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #009e79;
+    }
+
+    @media (max-width: 600px) {
+      .gallery img {
+        width: 100%;
+        height: auto;
+      }
+
+      header h1 {
+        font-size: 2em;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- Botão de acessibilidade -->
+<div id="accessibility-btn" onclick="toggleAccessibilityPanel()">♿</div>
+
+<!-- Painel de acessibilidade -->
+<div id="accessibility-panel">
+  <button onclick="adjustFontSize(1)">Aumentar fonte</button>
+  <button onclick="adjustFontSize(-1)">Diminuir fonte</button>
+  <button onclick="toggleContrast()">Alternar contraste</button>
+</div>
+
+
+
+
+  <header>
+    <h1>Festival Tropicália 2025</h1>
+    <p>Vibrações tropicais e música ao pôr do sol</p>
+  </header>
+
+  <section class="gallery">
+    <img src="img/download.jpeg" alt="Foto do festival">
+    <img src="img/download (1).jpeg" alt="Foto do festival">
+    <img src="img/download (2).jpeg" alt="Foto do festival">
+    <img src="img/download (3).jpeg" alt="Foto do festival">
+  </section>
+
+  <section class="contact">
+    <h2>Fale conosco</h2>
+    <form action="mailto:contato@tropicaliafest.com" method="post">
+      <label for="nome">Nome</label>
+      <input type="text" id="nome" name="nome" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="mensagem">Mensagem</label>
+      <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+</body>
+
+<script>
+  function toggleAccessibilityPanel() {
+    const panel = document.getElementById("accessibility-panel");
+    panel.style.display = panel.style.display === "none" ? "block" : "none";
+  }
+
+  function adjustFontSize(change) {
+    document.body.style.fontSize = 
+      (parseFloat(window.getComputedStyle(document.body).fontSize) + change) + "px";
+  }
+
+  function toggleContrast() {
+    document.body.classList.toggle("high-contrast");
+  }
+</script>
+
+</html>
